@@ -172,6 +172,15 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     [self setNeedsLayout];
 }
 
+- (void)setAttributedPlaceholder:(NSAttributedString *)attributedPlaceholder floatingTitle:(NSString *)floatingTitle
+{
+    _placeholder = attributedPlaceholder.string;
+    _placeholderLabel.attributedText = attributedPlaceholder;
+    _floatingLabel.text = floatingTitle;
+    
+    [self setNeedsLayout];
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
